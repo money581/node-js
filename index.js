@@ -10,6 +10,28 @@ const http=require('http');
 // })
 //we can also write as arrow function
  const server = http.createServer((req , res) => {
-console.log('aman');
+    const url=req.url;
+    if (url==='/home'){
+        res.write('<html>');
+        res.write('<head><title>my first page</title><head>');
+        res.write('<body><h1>welcome home</h1><body>');
+        res.write('</html>');
+        res.end();
+    }
+    else if (url==='/about'){
+        res.write('<html>');
+        res.write('<head><title>my first page</title><head>');
+        res.write('<body><h1> Welcome to About Us page</h1><body>');
+        res.write('</html>');
+        res.end();
+    }
+   else if (url==='/node'){
+        res.write('<html>');
+        res.write('<head><title>my first page</title><head>');
+        res.write('<body><h1> Welcome to my node js project</h1><body>');
+        res.write('</html>');
+        res.end();
+    }
+//console.log('aman');
  });
  server.listen(4000);
